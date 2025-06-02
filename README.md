@@ -52,5 +52,5 @@ The complete technical and academic report is included in the repository:
 3. Configure the DB connection in `DBHelper.java`  
 4. Run `AppMain.java`
 
----
+--- 
 
