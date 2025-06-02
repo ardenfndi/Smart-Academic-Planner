@@ -44,11 +44,6 @@ The complete technical and academic report is included in the repository:
 - **Ethem Kesim** – 210302205  
 - **Emre Çubuk** – 220302393  
 - **Ozan Umut Güney** – 200302109  
-> International University of Sarajevo – 2025
-
-## 📷 Screenshots
-
-(You can add screenshots here later.)
 
 ## 🧪 How to Run
 
