@@ -9,7 +9,7 @@ This project is a JavaFX-based desktop application designed to help university s
 - ✅ Prerequisite validation using MySQL  
 - ✅ Weekly schedule table visualization  
 - ✅ Optional AI integration using LM Studio (e.g., MythoMax)  
-- ✅ Fallback backtracking algorithm if AI is unavailable  
+- ✅ Fallback backtracking algorithm if AI is unavailable   
 
 ## 🧠 AI Integration (Optional)
 
