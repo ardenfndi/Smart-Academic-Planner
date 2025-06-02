@@ -37,7 +37,7 @@ If LM Studio is not running, the app automatically switches to a backtracking al
 ## 📄 Project Report
 
 The complete technical and academic report is included in the repository:  
-📎 `Smart_Academic_Planner_Report_FULL_FINAL.docx`
+📎 `Smart_Academic_Planner_Report.docx`
 
 ## 👨‍💻 Authors
 
