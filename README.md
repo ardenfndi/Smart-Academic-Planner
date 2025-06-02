@@ -1,18 +1,61 @@
-## Getting Started
+# Smart Academic Planner & Course Clash Detector 🧠📅
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project is a JavaFX-based desktop application designed to help university students generate conflict-free course schedules, with built-in prerequisite validation and optional AI support.
 
-## Folder Structure
+## 🚀 Features
 
-The workspace contains two folders by default, where:
+- ✅ Add courses with custom days and time slots  
+- ✅ Automatic detection of time conflicts  
+- ✅ Prerequisite validation using MySQL  
+- ✅ Weekly schedule table visualization  
+- ✅ Optional AI integration using LM Studio (e.g., MythoMax)  
+- ✅ Fallback backtracking algorithm if AI is unavailable  
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🧠 AI Integration (Optional)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+If LM Studio is running locally with a model like MythoMax, the app sends a natural language prompt describing the user's selected courses and possible time slots.  
+The AI responds with a human-readable schedule suggestion.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+If LM Studio is not running, the app automatically switches to a backtracking algorithm to generate the best possible non-conflicting schedule.
 
-## Dependency Management
+## 🛠️ Technologies Used
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Java 17  
+- JavaFX  
+- MySQL  
+- JDBC  
+- LM Studio / MythoMax (optional)  
+- MVC Architecture  
+
+## 🗄️ Database Overview
+
+- `courses(course_id, course_code, course_name)`  
+- `prerequisites(course_id, prerequisite_course_id)`  
+- `studentcourses(student_id, course_id)`  
+- `usercourses(user_course_id, course_code, course_name, day, start_time, end_time)`  
+
+## 📄 Project Report
+
+The complete technical and academic report is included in the repository:  
+📎 `Smart_Academic_Planner_Report_FULL_FINAL.docx`
+
+## 👨‍💻 Authors
+
+- **Ethem Kesim** – 210302205  
+- **Emre Çubuk** – 220302393  
+- **Ozan Umut Güney** – 200302109  
+> International University of Sarajevo – 2025
+
+## 📷 Screenshots
+
+(You can add screenshots here later.)
+
+## 🧪 How to Run
+
+1. Clone the repo  
+2. Ensure JavaFX and MySQL Connector JARs are in your classpath  
+3. Configure the DB connection in `DBHelper.java`  
+4. Run `AppMain.java`
+
+---
+
