@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Run AppMain",
+        "request": "launch",
+        "mainClass": "AppMain",
+        "vmArgs": "--module-path \"C:/Users/mr/Desktop/javafx-sdk-17.0.15/lib\" --add-modules javafx.controls,javafx.fxml"
+      }
+    ]
+  }
+  

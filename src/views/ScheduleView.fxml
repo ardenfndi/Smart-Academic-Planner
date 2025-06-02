@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.ScheduleViewController">
+    <children>
+        <Label layoutX="20" layoutY="20" text="Generated Schedule:"/>
+        <TextArea fx:id="resultTextArea" layoutX="20" layoutY="50" prefWidth="360" prefHeight="200"/>
+    </children>
+</AnchorPane>

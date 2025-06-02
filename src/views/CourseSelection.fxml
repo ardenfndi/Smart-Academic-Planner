@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.CourseSelectionController"
+            prefWidth="500.0" prefHeight="330.0" style="-fx-padding: 10px;">
+    <children>
+
+        <Label layoutX="170.0" layoutY="15.0" text="Add Course with Time Slot:" style="-fx-font-size: 14px;" />
+
+        <TextField fx:id="courseNameField" layoutX="40.0" layoutY="50.0" prefWidth="160.0" promptText="Course Name" />
+        <ComboBox fx:id="dayComboBox" layoutX="210.0" layoutY="50.0" prefWidth="100.0" />
+        <Button layoutX="320.0" layoutY="50.0" text="Add" onAction="#addCourse" />
+        <Button layoutX="370.0" layoutY="50.0" text="Remove" onAction="#removeCourse" />
+
+        <Label layoutX="50.0" layoutY="90.0" text="Starting Time" />
+        <Spinner fx:id="startHour" layoutX="130.0" layoutY="85.0" prefWidth="60.0" style="-fx-font-size: 14px;" />
+        <Spinner fx:id="startMinute" layoutX="195.0" layoutY="85.0" prefWidth="60.0" style="-fx-font-size: 14px;" />
+
+        <Label layoutX="270.0" layoutY="90.0" text="Ending Time" />
+        <Spinner fx:id="endHour" layoutX="350.0" layoutY="85.0" prefWidth="60.0" style="-fx-font-size: 14px;" />
+        <Spinner fx:id="endMinute" layoutX="415.0" layoutY="85.0" prefWidth="60.0" style="-fx-font-size: 14px;" />
+
+        <Label layoutX="200.0" layoutY="125.0" text="Your Courses" />
+        <ListView fx:id="courseListView" layoutX="40.0" layoutY="150.0" prefWidth="420.0" prefHeight="120.0" />
+
+        <Button layoutX="210.0" layoutY="280.0" text="Continue" onAction="#continueToSchedule" />
+
+    </children>
+</AnchorPane>
