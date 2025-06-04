@@ -3,6 +3,13 @@
     "configurations": [
       {
         "type": "java",
+        "name": "LocalAIClient",
+        "request": "launch",
+        "mainClass": "ai.LocalAIClient",
+        "projectName": "Smart Academic Planner_61d3264e"
+      },
+      {
+        "type": "java",
         "name": "Run AppMain",
         "request": "launch",
         "mainClass": "AppMain",

@@ -7,39 +7,49 @@ public class PromptBuilder {
 
     public static String buildSystemPrompt() {
         return """
-        You are a university course schedule optimizer AI.
-        Your job is to create a schedule by selecting ONE time slot for EACH course from the given options,
-        such that no selected time slots overlap.
+You are a course scheduling AI.
 
-        Instructions:
-        - Select exactly one time slot for each course.
-        - Avoid any time conflicts between selected slots.
-        - If it's not possible to schedule all courses conflict-free, schedule as many as possible without overlap.
-        - Clearly list the selected courses and their scheduled time slots.
-        - ONLY select one time slot per course.
-        - OUTPUT the schedule in bullet points exactly as requested.
-        - DO NOT list all time slots.
+Some courses have multiple time slot options using suffixes (e.g., CS105, CS105.1, CS105.2).
+These are different time options for the SAME course.
+Select ONLY ONE time slot per base course (e.g., only one of CS105, CS105.1, etc.)
 
-        Format your output like:
-        Selected Schedule:
-        - Course Name → Day HH:MM–HH:MM
-        - Another Course → Day HH:MM–HH:MM
-        """;
+Rules:
+- Select exactly one time slot per course
+- Avoid all time conflicts
+- Do not list skipped variants
+- Include all non-conflicting courses
+- Skip only if ALL time options conflict
+
+Valid course codes include:
+CS105, CS204, CS203, CS306, CS302, CS307, CS301, CS406, CS405, CS304, CS310, CS491, CS492, CS325, CS308, CS311, 
+SE201, SE202, SE301, SE308, SE309, ELIT100, ELIT200, ELIT300, MATH100, MATH101, MATH203, MATH204, IE408
+
+Course Code Group Examples:
+- CS105: CS105, CS105.1, CS105.2
+- CS306: CS306, CS306.1, CS306.2
+- CS304: CS304, CS304.1, CS304.2
+- ELIT100: ELIT100, ELIT100.1
+- MATH204: MATH209, MATH209.1, MATH209.2
+
+
+Output format:
+Selected Schedule:
+- Course Name → Day HH:MM – HH:MM
+- Course Name → Day HH:MM – HH:MM
+- Course Name → Day HH:MM – HH:MM
+- Course Name → Day HH:MM – HH:MM
+- Course Name → Day HH:MM – HH:MM
+""";
     }
 
     public static String buildUserPrompt() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Here are the available courses and their possible time slots:\n");
+        sb.append("Courses:\n");
 
         for (Course course : CourseStorage.getCourses()) {
-            sb.append("- ").append(course.getName()).append(" → ");
-            for (int i = 0; i < course.getTimeSlots().size(); i++) {
-                sb.append(course.getTimeSlots().get(i));
-                if (i < course.getTimeSlots().size() - 1) {
-                    sb.append(", ");
-                }
+            for (String slot : course.getTimeSlots()) {
+                sb.append(course.getName()).append(" → ").append(slot).append("\n");
             }
-            sb.append("\n");
         }
 
         return sb.toString();

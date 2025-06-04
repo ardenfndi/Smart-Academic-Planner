@@ -14,7 +14,9 @@ public class LocalAIClient {
         JsonObject payload = new JsonObject();
         payload.addProperty("model", model);
         payload.addProperty("temperature", 0.2);  
-        payload.addProperty("max_tokens", 500);  
+        payload.addProperty("max_tokens", 1000);  
+        payload.add("stop", JsonNull.INSTANCE);
+
 
         JsonArray messages = new JsonArray();
 
